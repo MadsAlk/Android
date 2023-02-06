@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Travel Guide</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Blue Travel</string>
+    <string name="nav_header_subtitle">Blue.orange@travel.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_all">All</string>
+    <string name="menu_fav">Favorite</string>
+    <string name="menu_sort">Sort</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_logout">Logout</string>
+
+
+    <string name="helloooooo">helloooooo</string>
+</resources>

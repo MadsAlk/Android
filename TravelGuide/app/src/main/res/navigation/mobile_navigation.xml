@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_profile">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.travelguide.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_all"
+        android:name="com.example.travelguide.all.AllFragment"
+        android:label="@string/menu_all"
+        tools:layout="@layout/fragment_all" />
+    <fragment
+        android:id="@+id/nav_sort"
+        android:name="com.example.travelguide.sort.SortFragment"
+        android:label="@string/menu_sort"
+        tools:layout="@layout/fragment_sort" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.travelguide.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.travelguide.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
+
+    <fragment
+        android:id="@+id/nav_fav"
+        android:name="com.example.travelguide.fav.FavFragment"
+        android:label="@string/menu_fav"
+        tools:layout="@layout/fragment_fav" />
+</navigation>
