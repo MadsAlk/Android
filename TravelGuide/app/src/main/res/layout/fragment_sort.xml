@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sort_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sort.SortFragment">
+    android:orientation="vertical"
+    tools:context=".sort.SortFragment" >
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="He-----llo" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/btn_asc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ascending"
+            app:rippleColor="#DD9D9D" />
+
+        <Button
+            android:id="@+id/btn_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Descending" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="341dp">
+
+        <LinearLayout
+            android:id="@+id/sort_layout_dest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F6F2EB"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/sort_layout_anim"
+        android:layout_width="match_parent"
+        android:layout_height="341dp"
+        android:background="#DAEDC6"
+        android:backgroundTint="#E7F6D2"
+        android:orientation="vertical"></LinearLayout>
+</LinearLayout>
