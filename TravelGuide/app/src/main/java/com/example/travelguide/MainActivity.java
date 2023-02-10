@@ -1,5 +1,6 @@
 package com.example.travelguide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity{
 
         ConnectionAsyncTask connectionAsyncTask = new ConnectionAsyncTask(this); //Maybe WRONG ***
         connectionAsyncTask.execute("https://run.mocky.io/v3/d1a9c002-6e88-4d1e-9f39-930615876bca");
+
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        MainActivity.this.startActivity(intent);
 
         //create fragment tag
 //        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

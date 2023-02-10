@@ -74,6 +74,7 @@ public class SignInActivity extends AppCompatActivity {
                                 Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                 //intent.putExtra("email", email.getText().toString());
                                 SignInActivity.this.startActivity(intent);
+                                User.currentEmail = email.getText().toString();
                                 Toast toast = Toast.makeText(SignInActivity.this,
                                         "Successful", Toast.LENGTH_SHORT);
                                 toast.show();
