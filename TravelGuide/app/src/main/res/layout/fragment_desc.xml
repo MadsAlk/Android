@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dest_fragments.DescFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/text_desc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4E4D0"
+        android:paddingLeft="20px"
+        android:paddingTop="20px"
+        android:paddingEnd="20px"
+        android:paddingRight="20px"
+        android:text="@string/hello_blank_fragment"
+        android:textColor="#271B1B"
+        android:textSize="20sp" />
+
+</FrameLayout>

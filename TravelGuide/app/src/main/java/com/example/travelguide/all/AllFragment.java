@@ -2,6 +2,7 @@ package com.example.travelguide.all;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.example.travelguide.ConnectionAsyncTask;
 import com.example.travelguide.Destination;
+import com.example.travelguide.DestinationActivity;
 import com.example.travelguide.DestinationJsonParser;
 import com.example.travelguide.MainActivity;
 import com.example.travelguide.R;
@@ -126,6 +128,9 @@ public class AllFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(getContext(), destinations.get(0).getCity(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), DestinationActivity.class);
+                    intent.putExtra("dest", customObject.getCity());
+                    startActivity(intent);
                 }
             });
 
@@ -137,6 +142,9 @@ public class AllFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(getContext(), destinations.get(1).getCity(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), DestinationActivity.class);
+                    intent.putExtra("dest", customObject.getCity());
+                    startActivity(intent);
                 }
             });
 
