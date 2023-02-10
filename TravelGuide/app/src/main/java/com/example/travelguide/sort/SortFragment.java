@@ -13,7 +13,9 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +44,8 @@ public class SortFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_sort, container, false);
         // Get a reference to the Views
+
+        final ImageView imageView = (ImageView) view.findViewById(R.id.img_anim);
         Button btnAsc = view.findViewById(R.id.btn_asc);
         Button btnDes = view.findViewById(R.id.btn_des);
         linearLayout = view.findViewById(R.id.sort_layout_dest);
@@ -49,14 +53,21 @@ public class SortFragment extends Fragment {
         btnAsc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                imageView.setVisibility(View.VISIBLE);
+                imageView.startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.movex));
                 fillDestinations(1);
+                imageView.setVisibility(View.INVISIBLE);
             }
         });
 
         btnDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 fillDestinations(0);
+                imageView.setVisibility(View.VISIBLE);
+                imageView.startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.move_desc));
+                imageView.setVisibility(View.INVISIBLE);
             }
         });
 

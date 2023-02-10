@@ -49,5 +49,14 @@
         android:layout_height="341dp"
         android:background="#DAEDC6"
         android:backgroundTint="#E7F6D2"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_anim"
+            android:layout_width="95dp"
+            android:layout_height="81dp"
+            android:layout_marginLeft="135dp"
+            android:src="@drawable/dollar"
+            android:visibility="invisible" />
+    </LinearLayout>
 </LinearLayout>
