@@ -45,12 +45,6 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        //final TextView textView = binding.textHome;
-        //linearLayout = binding.homeLinearrr;
-        //linearLayout.setBackgroundColor(Color.RED);
-
-//        ConnectionAsyncTask connectionAsyncTask = new ConnectionAsyncTask(getActivity());
-//        connectionAsyncTask.execute("https://run.mocky.io/v3/d1a9c002-6e88-4d1e-9f39-930615876bca");
 
         DataBaseHelper dataBaseHelper =new DataBaseHelper(getContext(),"TRAVEL", null,1);
         Cursor userCursor = dataBaseHelper.getUser(User.currentEmail);

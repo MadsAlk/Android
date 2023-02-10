@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/dest_city"
-        android:layout_width="match_parent"
+        android:layout_width="387dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/amita"
         android:paddingLeft="20px"
@@ -51,6 +51,12 @@
         android:id="@+id/dest_fragmentContainer"
         android:name="com.example.travelguide.dest_fragments.DescFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="542dp"
         tools:layout="@layout/fragment_desc" />
+
+    <Button
+        android:id="@+id/dest_fav"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:text="Add to Favorites" />
 </LinearLayout>

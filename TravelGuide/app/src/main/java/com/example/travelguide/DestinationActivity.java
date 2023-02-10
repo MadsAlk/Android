@@ -55,6 +55,7 @@ public class DestinationActivity extends AppCompatActivity {
         Button btn_desc = (Button) findViewById(R.id.btn_desc);
         Button btn_img = (Button) findViewById(R.id.btn_img);
         Button btn_map = (Button) findViewById(R.id.btn_map);
+        Button btn_fav = (Button) findViewById(R.id.dest_fav);
 
 
         btn_desc.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +104,15 @@ public class DestinationActivity extends AppCompatActivity {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.dest_fragmentContainer, mapFragment, null);
                 fragmentTransaction.commit();
+            }
+        });
+
+
+        btn_fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!User.favorites.contains(activityDest))
+                    User.favorites.add(activityDest);
             }
         });
 

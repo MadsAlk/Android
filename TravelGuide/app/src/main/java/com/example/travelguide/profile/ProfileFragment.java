@@ -46,10 +46,7 @@ public class ProfileFragment extends Fragment {
                 "North America", "South America","Australia" };
         final Spinner continentSpinner =(Spinner)view.findViewById(R.id.editdest);
         ArrayAdapter<String> objContinentArr = new ArrayAdapter<>(getContext(),android.R.layout.simple_spinner_item, options);
-        continentSpinner.setAdapter(
-                new NothingSelectedSpinnerAdapter(
-                        objContinentArr,
-                        R.layout.contact_spinner_row_nothing_selected, getContext()));
+        continentSpinner.setAdapter(objContinentArr);
 
 
         //Get database
@@ -112,6 +109,7 @@ public class ProfileFragment extends Fragment {
 
                 }
                 else {
+                    if(!userCursor.getString(4).equals(continentSpinner.getSelectedItem().toString()))User.flag=0;
                     newUser.setpDestination(continentSpinner.getSelectedItem().toString());
                 }
                 //Check if there are errors

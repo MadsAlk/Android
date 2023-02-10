@@ -2,6 +2,7 @@ package com.example.travelguide.sort;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.travelguide.Destination;
+import com.example.travelguide.DestinationActivity;
 import com.example.travelguide.DestinationJsonParser;
 import com.example.travelguide.R;
 import com.example.travelguide.all.AllFragment;
@@ -118,7 +120,10 @@ public class SortFragment extends Fragment {
             textView1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(), destinations.get(0).getCity(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), destinations.get(0).getCity(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), DestinationActivity.class);
+                    intent.putExtra("dest", customObject.getCity());
+                    startActivity(intent);
                 }
             });
 
@@ -129,7 +134,10 @@ public class SortFragment extends Fragment {
             textView2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(), destinations.get(1).getCity(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), destinations.get(0).getCity(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), DestinationActivity.class);
+                    intent.putExtra("dest", customObject.getCity());
+                    startActivity(intent);
                 }
             });
 

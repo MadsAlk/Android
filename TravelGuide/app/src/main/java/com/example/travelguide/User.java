@@ -1,7 +1,12 @@
 package com.example.travelguide;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     public static String currentEmail;
+    public static List<Destination> favorites = new ArrayList<>();
+    public static int flag = 0;
 
     private String email;
     private String firstname;
