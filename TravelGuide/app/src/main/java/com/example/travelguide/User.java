@@ -1,6 +1,8 @@
 package com.example.travelguide;
 
 public class User {
+    public static String currentEmail;
+
     private String email;
     private String firstname;
     private String lastname;
@@ -16,6 +18,7 @@ public class User {
         this.lastname = lastname;
         this.password = password;
         this.pDestination = pDestination;
+        currentEmail = email;
     }
 
     public String getEmail() {

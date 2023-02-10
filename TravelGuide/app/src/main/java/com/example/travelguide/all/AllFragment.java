@@ -46,17 +46,19 @@ public class AllFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_all, container, false);
+
         // Get a reference to the Views
         textView = view.findViewById(R.id.all_text);
-        Button btn = view.findViewById(R.id.all_btn);
         linearLayout = view.findViewById(R.id.all_layout);
+        fillDestinations();
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fillDestinations();
-            }
-        });
+////        Button btn = view.findViewById(R.id.all_btn);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fillDestinations();
+//            }
+//        });
         return view;
     }
 
@@ -64,7 +66,59 @@ public class AllFragment extends Fragment {
     public void fillDestinations() {
         linearLayout.removeAllViews();
         List<Destination> destinations = DestinationJsonParser.destinations;
+        System.out.println("____________()_________________" + destinations.size());
         //System.out.println("HERE _________________" + destinations.get(2));
+
+        for (int i = 0; i < destinations.size(); i++) {
+            Destination customObject = destinations.get(i);
+
+            LinearLayout innerLinearLayout = new LinearLayout(getContext());
+            innerLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+            innerLinearLayout.setGravity(Gravity.CENTER_VERTICAL);
+
+            TextView textView1 = new TextView(getContext());
+            textView1.setText(customObject.getCity());
+            textView1.setTextSize(24);
+            textView1.setPadding(16, 16, 16, 16);
+            textView1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Toast.makeText(getContext(), destinations.get(0).getCity(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), DestinationActivity.class);
+                    intent.putExtra("dest", customObject.getCity());
+                    startActivity(intent);
+                }
+            });
+
+            TextView textView2 = new TextView(getContext());
+            textView2.setText(customObject.getCountry());
+            textView2.setTextSize(24);
+            textView2.setPadding(16, 16, 16, 16);
+            textView2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   // Toast.makeText(getContext(), destinations.get(1).getCity(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), DestinationActivity.class);
+                    intent.putExtra("dest", customObject.getCity());
+                    startActivity(intent);
+                }
+            });
+
+            innerLinearLayout.addView(textView1);
+            innerLinearLayout.addView(textView2);
+
+
+            if (i % 2 == 0) {
+                innerLinearLayout.setBackgroundColor(Color.LTGRAY);
+            } else {
+                innerLinearLayout.setBackgroundColor(Color.WHITE);
+            }
+
+            linearLayout.addView(innerLinearLayout);
+            linearLayout.setOnTouchListener(new MyOnTouchListener());
+        }
+
+
 
 //        for (int i = 0; i < destinations.size(); i++) {
 //            Destination object = destinations.get(i);
@@ -113,90 +167,7 @@ public class AllFragment extends Fragment {
 
         //____________________________________________
 
-        for (int i = 0; i < destinations.size(); i++) {
-            Destination customObject = destinations.get(i);
 
-            LinearLayout innerLinearLayout = new LinearLayout(getContext());
-            innerLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
-            innerLinearLayout.setGravity(Gravity.CENTER_VERTICAL);
-
-            TextView textView1 = new TextView(getContext());
-            textView1.setText(customObject.getCity());
-            textView1.setTextSize(24);
-            textView1.setPadding(16, 16, 16, 16);
-            textView1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getContext(), destinations.get(0).getCity(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getContext(), DestinationActivity.class);
-                    intent.putExtra("dest", customObject.getCity());
-                    startActivity(intent);
-                }
-            });
-
-            TextView textView2 = new TextView(getContext());
-            textView2.setText(customObject.getCountry());
-            textView2.setTextSize(24);
-            textView2.setPadding(16, 16, 16, 16);
-            textView2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getContext(), destinations.get(1).getCity(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getContext(), DestinationActivity.class);
-                    intent.putExtra("dest", customObject.getCity());
-                    startActivity(intent);
-                }
-            });
-
-            innerLinearLayout.addView(textView1);
-            innerLinearLayout.addView(textView2);
-
-
-            if (i % 2 == 0) {
-                innerLinearLayout.setBackgroundColor(Color.LTGRAY);
-            } else {
-                innerLinearLayout.setBackgroundColor(Color.WHITE);
-            }
-
-            linearLayout.addView(innerLinearLayout);
-            linearLayout.setOnTouchListener(new MyOnTouchListener());
-        }
-
-        //_____________________________________________-
-
-
-
-//        for (Destination object : destinations) {
-//            TextView tvVariable1 = new TextView(getContext());
-//            tvVariable1.setText("Variable 1: " + object.getCity());
-//            tvVariable1.setTextSize(20);
-//            tvVariable1.setTextColor(Color.parseColor("#008CBA"));
-//            linearLayout.addView(tvVariable1);
-//
-//            TextView tvVariable2 = new TextView(getContext());
-//            tvVariable2.setText("Variable 2: " + object.getCountry());
-//            tvVariable2.setTextSize(20);
-//            tvVariable2.setTextColor(Color.parseColor("#6A5ACD"));
-//            linearLayout.addView(tvVariable2);
-//
-//            TextView tvSeparator = new TextView(getContext());
-//            tvSeparator.setText("------------------------------");
-//            tvSeparator.setTextSize(20);
-//            tvSeparator.setTextColor(Color.GRAY);
-//            linearLayout.addView(tvSeparator);
-//        }
-
-
-
-//        textView.setText(destinations.get(2).toString());
-//        linearLayout.setBackgroundColor(Color.GREEN);
-//        linearLayout.removeAllViews();
-//        for (int i = 0; i < destinations.size(); i++) {
-//            System.out.println("HERE _________________" +i+ destinations.get(i));
-//            TextView textView = new TextView(getContext());
-//            textView.setText(destinations.get(i).toString());
-//            linearLayout.addView(textView);
-//        }
     }
 
 

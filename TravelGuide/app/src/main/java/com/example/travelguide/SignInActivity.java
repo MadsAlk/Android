@@ -68,7 +68,11 @@ public class SignInActivity extends AppCompatActivity {
                             {
                                 if(check.isChecked())
                                     sharedPrefManager.writeString("email",email.getText().toString());
+
+                                User.currentEmail = email.getText().toString();
+
                                 Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                                //intent.putExtra("email", email.getText().toString());
                                 SignInActivity.this.startActivity(intent);
                                 Toast toast = Toast.makeText(SignInActivity.this,
                                         "Successful", Toast.LENGTH_SHORT);

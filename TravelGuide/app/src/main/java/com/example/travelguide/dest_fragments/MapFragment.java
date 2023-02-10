@@ -17,6 +17,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
@@ -85,12 +87,14 @@ public class MapFragment extends Fragment {
             lng = bundle.getDouble("lng");
             lat = bundle.getDouble("lat");
 
+            Configuration.getInstance().setUserAgentValue("Ahmad");
             MapView map = (MapView) rootView.findViewById(R.id.map);
             map.setTileSource(TileSourceFactory.MAPNIK);
             map.setBuiltInZoomControls(true);
             map.setMultiTouchControls(true);
             map.getController().setCenter(new GeoPoint(lat, lng));
             map.getController().setZoom(16);
+
 
 //            mapv = rootView.findViewById(R.id.map);
 //            mapv.setTileSource(TileSourceFactory.MAPNIK);

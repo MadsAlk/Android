@@ -2,6 +2,7 @@ package com.example.travelguide.logout;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.travelguide.MainActivity;
 import com.example.travelguide.R;
+import com.example.travelguide.SignInActivity;
 
 public class LogoutFragment extends Fragment {
 
@@ -24,7 +27,13 @@ public class LogoutFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_logout, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_logout, container, false);
+
+        Intent intent = new Intent(getContext(), SignInActivity.class);
+        getContext().startActivity(intent);
+
+
+        return rootView;
     }
 
     @Override

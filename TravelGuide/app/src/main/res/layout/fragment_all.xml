@@ -11,12 +11,6 @@
     <TextView
         android:id="@+id/all_text"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:text="HELOLoOoO" />
+        android:layout_height="150dp" />
 
-    <Button
-        android:id="@+id/all_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
 </LinearLayout>
