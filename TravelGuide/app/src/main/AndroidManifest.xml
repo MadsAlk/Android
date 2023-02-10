@@ -22,10 +22,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelGuide"
         tools:targetApi="31">
-<!--        <meta-data-->
-<!--            android:name="com.google.android.actions"-->
-<!--            android:resource="@xml/movex" />-->
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelGuide.NoActionBar">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity> <!-- <meta-data -->
+        <!-- android:name="com.google.android.actions" -->
+        <!-- android:resource="@xml/movex" /> -->
         <activity
             android:name=".DestinationActivity"
             android:exported="false">
@@ -34,10 +49,9 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".SignInActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.TravelGuide.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

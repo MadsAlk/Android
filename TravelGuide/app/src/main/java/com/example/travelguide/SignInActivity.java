@@ -22,13 +22,13 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+        setContentView(R.layout.activity_sign_in);
         sharedPrefManager =SharedPrefManager.getInstance(this);
         txtSignUp = findViewById(R.id.tSignUp);
         txtSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignInActivity.this, signUp.class);
+                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -68,7 +68,7 @@ public class SignInActivity extends AppCompatActivity {
                             {
                                 if(check.isChecked())
                                     sharedPrefManager.writeString("email",email.getText().toString());
-                                Intent intent = new Intent(SignInActivity.this, MainPage.class);
+                                Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                 SignInActivity.this.startActivity(intent);
                                 Toast toast = Toast.makeText(SignInActivity.this,
                                         "Successful", Toast.LENGTH_SHORT);
