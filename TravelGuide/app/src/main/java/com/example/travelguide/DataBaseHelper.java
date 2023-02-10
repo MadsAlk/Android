@@ -41,4 +41,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return sqLiteDatabase.rawQuery("SELECT * FROM USER WHERE email=\'"
                 + key+"\'", null);
     }
+    public int editUser(User user) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("EMAIL", user.getEmail());
+        contentValues.put("FNAME", user.getFirstname());
+        contentValues.put("LNAME", user.getLastname());
+        contentValues.put("PASSWORD", user.getPassword());
+        contentValues.put("PDEST", user.getpDestination());
+        return sqLiteDatabase.update("USER", contentValues, "email=\'"
+                +user.getEmail()+"\'", null);
+    }
 }

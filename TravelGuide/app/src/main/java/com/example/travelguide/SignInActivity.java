@@ -70,6 +70,7 @@ public class SignInActivity extends AppCompatActivity {
                                     sharedPrefManager.writeString("email",email.getText().toString());
                                 Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                 SignInActivity.this.startActivity(intent);
+                                User.currentEmail = email.getText().toString();
                                 Toast toast = Toast.makeText(SignInActivity.this,
                                         "Successful", Toast.LENGTH_SHORT);
                                 toast.show();
