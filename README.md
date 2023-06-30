@@ -1,4 +1,13 @@
 # Android
+Travel Guide Application
+Welcome to the Travel Guide Application repository! This project aims to develop an application that serves as a comprehensive travel guide, providing users with detailed information about various travel destinations.
+
+Features
+User Registration: Users are required to sign up with their email address and password to access the application.
+Travel Destination Listings: The application provides a list of possible travel destinations, including essential information about each location.
+Personalized Favorites: Registered users can create and manage their own collection of favorite travel destinations.
+REST Integration: The application retrieves all the necessary travel destination information through REST APIs.
+Destination Details: Each travel destination includes details such as city name, country, continent, longitude and latitude coordinates, a brief description, living costs, and a featured image URL.
 
 <div style="display: flex;">
   <img src="screenshots/Screenshot_20230630-023424.jpg" alt="Login" width="200" style="margin-right: 10px;">
